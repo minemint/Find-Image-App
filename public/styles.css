@@ -1,0 +1,26 @@
+span.font-bold {
+
+  color: brown;
+}
+h5.font-bold {
+  font-weight: bold;
+  color: rgb(228, 124, 28)
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.group-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+h2 {
+  font-weight: bold;
+}
+header {
+  background-color: #84baf0;
+  padding: 10px;
+  text-align: center;
+}

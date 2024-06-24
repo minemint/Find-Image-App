@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Product Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+  <h2>Find Product</h2>
+</header>
+<div class="container">
+  <div class="group-input">
+    <form class="form-inline " id="form" action="/submit" method="POST">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only">Password</label>
+        <input
+          type="text"
+          class="form-control"
+          value=""
+          name="search"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">
+        search
+      </button>
+  </form>
+  </div>
+ <%if (locals.product) {%> <% product.forEach((item) => { %>
+  <div class="row m-5" style="background-color: azure">
+    <div class="col-2">
+      <img src="<%= item.product_photo %>" class="card-img-top" alt="..." />
+    </div>
+    <div class="card-body col-10">
+      <p class="card-title"><%= item.product_title %></p>
+      <p class="card-text">
+        <span class="">star rating</span> <%= item.product_star_rating %>
+      </p>
+      <p class="card-text">
+        <span class="font-bold">price</span> <%= item.product_price %>
+      </p>
+    </div>
+  </div>
+  <% }); %> <%} else {%>
+  <div class="row m-5" style="background-color: azure">
+    <p>Cant get product</p>
+  <%}%>
+</div>
+</html>
+
